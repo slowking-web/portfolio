@@ -5,7 +5,7 @@
 @endsection
 
 @section('menu')
-	@parent
+	@include('components.menu')
 @endsection
 
 @section('footer')
