@@ -22,6 +22,6 @@ class MainController extends Controller
             'aboutme' => $aboutme
         ];
         
-        return view('main.index', $data);
+        return view('pf.index', $data);
     }
 }

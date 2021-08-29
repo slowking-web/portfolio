@@ -7,6 +7,8 @@
     </section>
     <section class="works">
     	<h2 class="heading">WORKS</h2>
+    	<div id="work"></div>
+    	<script src="{{asset('/js/app.js')}}"></script>
     </section>
     <section class="skills">
     	<h2 class="heading">MY SKILLS</h2>
