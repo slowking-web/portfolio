@@ -17,11 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*
-Route::get('main', function () {
-    return '<html><body><h1>Hello</h1><p>This is sample page.</p></body></html>';
-});
-*/
+// Main画面の表示
 Route::get('pf', 'App\Http\Controllers\MainController@index');
-
 Route::get('pf/work', 'App\Http\Controllers\WorkController@index');
+// MySkilsのルートを追加予定
+
+// Workの追加
+Route::get('work/add', 'App\Http\Controllers\WorkController@add');
+Route::post('work/add', 'App\Http\Controllers\WorkController@create');
+
+// Workの削除
+
+
+// MySkilsの追加
+
+
+// MySkilsの削除
+
