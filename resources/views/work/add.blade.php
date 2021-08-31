@@ -5,7 +5,7 @@
 @endsection
 
 @section('menu')
-	<form class="contact-form" action="" method="post">
+	<form class="contact-form" action="" method="post" enctype="multipart/form-data">
 	<table>
 		@csrf
 		<tr><th></th><td><input type="text" name="name"></input></td></tr>
