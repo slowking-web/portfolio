@@ -12,6 +12,18 @@ class WorkController extends Controller
     {
         return view('pf.work');
     }
+
+    public function json($id = -1)
+    {
+        if ($id == -1)
+        {
+            return Work::get()->toJson();
+        }
+        else
+       {
+           return Work::find($id)->toJson();
+        }
+    }
     
     public function add()
     {

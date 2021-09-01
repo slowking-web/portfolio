@@ -4,65 +4,51 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ReactDOM from 'react-dom';
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "red" }}
-      onClick={onClick}
-    />
-  );
-}
-
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "green" }}
-      onClick={onClick}
-    />
-  );
-}
-
-
-function Work() {
-	const settings = {
-		dots: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		AdaptiveHeight: true
-	};
-	return (
-		<div>
-			<Slider {...settings}>
+export default class Work extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			works: []
+		}
+		
+		// DBから「work」テーブルを取得する
+		axios.get('work/json').then(response=>{
+			let get_work = response.data;
+			this.setState({works:get_work});
+		});
+	}
+	
+	works() {
+		return this.state.works.map(data => {
+			var url = "http://localhost/portfolio/public/pf/work/" + data.name;
+			var name = "storage/files/" + data.name + ".jpg";
+			return (
+				<div key={data}>
+					<a href={url}><img src={name} /></a>
+				</div>
+			)
+		});
+	}
+	
+	render() {
+		const settings = {
+			dots: true,
+			infinite: true,
+			speed: 500,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			AdaptiveHeight: true
+		}
+		
+		return (
 			<div>
-				<h3>1</h3>
+				<Slider {...settings}>
+					{this.works()}
+				</Slider>
 			</div>
-			<div>
-				<h3>2</h3>
-			</div>
-			<div>
-				<h3>3</h3>
-			</div>
-			<div>
-				<h3>4</h3>
-			</div>
-			<div>
-				<h3>5</h3>
-			</div>
-			<div>
-				<h3>6</h3>
-			</div>
-			</Slider>
-		</div>
 		);
 	}
-
-export default Work;
+}
 
 if (document.getElementById('work')) {	
     ReactDOM.render(<Work />, document.getElementById('work'));	

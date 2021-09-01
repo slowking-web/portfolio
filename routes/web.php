@@ -22,6 +22,9 @@ Route::get('pf', 'App\Http\Controllers\MainController@index');
 Route::get('pf/work', 'App\Http\Controllers\WorkController@index');
 // MySkilsのルートを追加予定
 
+Route::get('work/json', 'App\Http\Controllers\WorkController@json');
+Route::get('work/json/{id}', 'App\Http\Controllers\WorkController@json');
+
 // Workの追加
 Route::get('work/add', 'App\Http\Controllers\WorkController@add');
 Route::post('work/add', 'App\Http\Controllers\WorkController@create');
