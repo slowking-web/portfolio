@@ -8,9 +8,10 @@ use App\Models\Work;
 
 class WorkController extends Controller
 {
-    public function index()
+    public function index(Request $request, $id)
     {
-        return view('pf.work');
+        $work = Work::find($id);
+        return view('pf.work', ['work' => $work]);
     }
 
     public function json($id = -1)
@@ -36,13 +37,17 @@ class WorkController extends Controller
         $work = new Work;
         $work->name = $request->name;
         $work->picture = $request->picture;
+        $work->extension = $request->file('picture')->extension();
         $work->job_role = $request->job_role;
         $work->save();
         
+        // 保存したデータのIDを取得
+        $id = $work->id;
+        
         // ファイルをアップロード
-        $pname = $request->name;
+        //$pname = $request->name;
         $ext = '.' . $request->file('picture')->extension();
-        Storage::disk('public')->putFileAs('files', $request->file('picture'),  $pname . $ext);
+        Storage::disk('public')->putFileAs('files', $request->file('picture'),  $id . $ext);
         
         return redirect('/pf');
     }

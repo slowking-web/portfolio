@@ -18,6 +18,7 @@ class CreateWorksTable extends Migration
             $table->integer('users_id')->nullable();
             $table->string('name')->nullable();
             $table->string('picture')->nullable();
+            $table->string('extension')->nullable();
             $table->string('job_role')->nullable();
             $table->timestamps();
         });

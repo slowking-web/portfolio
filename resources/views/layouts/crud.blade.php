@@ -1,7 +1,7 @@
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../../css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
 <div class="header">

@@ -20,8 +20,8 @@ export default class Work extends React.Component {
 	
 	works() {
 		return this.state.works.map(data => {
-			var url = "http://localhost/portfolio/public/pf/work/" + data.name;
-			var name = "storage/files/" + data.name + ".jpg";
+			var url = "pf/work/" + data.id;
+			var name = "storage/files/" + data.id + ".jpg";
 			return (
 				<div key={data}>
 					<a href={url}><img src={name} /></a>

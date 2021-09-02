@@ -20,8 +20,10 @@ Route::get('/', function () {
 // Main画面の表示
 Route::get('pf', 'App\Http\Controllers\MainController@index');
 Route::get('pf/work', 'App\Http\Controllers\WorkController@index');
+Route::get('pf/work/{id}', 'App\Http\Controllers\WorkController@index');
 // MySkilsのルートを追加予定
 
+//Larabel-react間のデータ通信に利用
 Route::get('work/json', 'App\Http\Controllers\WorkController@json');
 Route::get('work/json/{id}', 'App\Http\Controllers\WorkController@json');
 

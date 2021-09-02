@@ -2033,8 +2033,8 @@ var Work = /*#__PURE__*/function (_React$Component) {
     key: "works",
     value: function works() {
       return this.state.works.map(function (data) {
-        var url = "http://localhost/portfolio/public/pf/work/" + data.name;
-        var name = "storage/files/" + data.name + ".jpg";
+        var url = "pf/work/" + data.id;
+        var name = "storage/files/" + data.id + ".jpg";
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
             href: url,

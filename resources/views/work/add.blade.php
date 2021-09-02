@@ -1,4 +1,4 @@
-@extends('layouts.sub')
+@extends('layouts.crud')
 
 @section('header')
 	@include('components.header')
