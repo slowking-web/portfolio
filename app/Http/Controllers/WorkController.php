@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Work;
+use PHPUnit\Framework\Error\Warning;
 
 class WorkController extends Controller
 {
@@ -49,6 +50,31 @@ class WorkController extends Controller
         $ext = '.' . $request->file('picture')->extension();
         Storage::disk('public')->putFileAs('files', $request->file('picture'),  $id . $ext);
         
+        return redirect('/pf');
+    }
+    
+    public function delete(Request $request)
+    {
+        //$work = Work::find($request->id);
+        //return view('work.del', ['work' => $work]);
+        
+        $work = Work::all();
+        return view('work.del', ['works' => $work]);
+    }
+    
+    public function remove(Request $request)
+    {
+        //$work = Work::find($request->id)->first();
+        //$work->delete();
+        //$work = $request->id;
+        //$work1 = Work::find($request->id);
+        //$work2 = Work::where('id', $request->id)->get();
+        //Work::where('id', $request->id)->delete();
+        //Work::whereIn('id', $request->id)->delete();
+        //$checked = Work::input('checked');
+        //Work::whereIn('id', $checked)->delete();
+        //Work::find($request->chk)->delete();
+        Work::whereIn('id', $request->chk)->delete();
         return redirect('/pf');
     }
 }

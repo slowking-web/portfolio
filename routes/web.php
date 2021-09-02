@@ -32,7 +32,8 @@ Route::get('work/add', 'App\Http\Controllers\WorkController@add');
 Route::post('work/add', 'App\Http\Controllers\WorkController@create');
 
 // Workの削除
-
+Route::get('work/del', 'App\Http\Controllers\WorkController@delete');
+Route::post('work/del', 'App\Http\Controllers\WorkController@remove');
 
 // MySkilsの追加
 
