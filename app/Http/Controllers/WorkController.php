@@ -64,17 +64,20 @@ class WorkController extends Controller
     
     public function remove(Request $request)
     {
-        //$work = Work::find($request->id)->first();
-        //$work->delete();
-        //$work = $request->id;
-        //$work1 = Work::find($request->id);
-        //$work2 = Work::where('id', $request->id)->get();
-        //Work::where('id', $request->id)->delete();
-        //Work::whereIn('id', $request->id)->delete();
-        //$checked = Work::input('checked');
-        //Work::whereIn('id', $checked)->delete();
-        //Work::find($request->chk)->delete();
-        Work::whereIn('id', $request->chk)->delete();
+        try {
+            // 画像ファイルの削除
+            foreach ($request->chk as $id)
+            {
+                $work = Work::find($id);
+                Storage::disk('public')->delete('files/' . $work->id . '.' . $work->extension);
+            }
+            
+            // 対象データの削除
+            Work::whereIn('id', $request->chk)->delete();
+        } catch (\Throwable $th) {
+            
+        }
+        
         return redirect('/pf');
     }
 }
