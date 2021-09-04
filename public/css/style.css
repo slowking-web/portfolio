@@ -69,7 +69,7 @@ body {
  * header
  * -------------------------------- */
 .header {
-  padding: 170px 30px 80px;
+  padding: 70px 30px 80px;
 }
 .site-title-sub {
   margin: 0 0 30px;
@@ -209,19 +209,6 @@ body {
   margin: 50px auto 0;
   table-layout: fixed;
 }
-.skill-box {
-  display: table-cell;
-}
-.skill-icon {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 30px;
-  border: 4px solid;
-  border-radius: 50%;
-  color: #f1b400;
-  font-size: 8rem;
-  line-height: 142px;
-}
 .skill-title {
   margin: 0 20px 20px;
   font-size: 2rem;
@@ -230,7 +217,14 @@ body {
   margin: 0 20px;
   line-height: 2;
 }
-
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+tbody {
+	color: #333;
+}
 
 /* --------------------------------
  * contact
