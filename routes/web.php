@@ -39,4 +39,5 @@ Route::post('work/del', 'App\Http\Controllers\WorkController@remove');
 Route::get('skill/add', 'App\Http\Controllers\SkillController@add');
 Route::post('skill/add', 'App\Http\Controllers\SkillController@create');
 // MySkilsの削除
-
+Route::get('skill/del', 'App\Http\Controllers\SkillController@delete');
+Route::post('skill/del', 'App\Http\Controllers\SkillController@remove');
