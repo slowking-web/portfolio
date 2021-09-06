@@ -45,13 +45,13 @@ export default class Menu extends React.Component {
 		return (
 			<div onBlur={this.onBlurHandler}
 			onFocus={this.onFocusHandler}>
-				<dt id="menu_top" 
-					onClick={this.onClickHandler}
-					aria-haspopup="true"
-					aria-expanded={this.state.isOpen}>
-					Menu
-				</dt>
 				<dl id="menubar">
+					<dt 
+						onClick={this.onClickHandler}
+						aria-haspopup="true"
+						aria-expanded={this.state.isOpen}>
+						Menu
+					</dt>
 					{this.state.isOpen && this.state.menus.map(menu => (
 						<React.Fragment key={menu.id}>
 						<dd><a href={menu.url}>{menu.name}</a></dd>

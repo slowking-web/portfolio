@@ -2053,18 +2053,17 @@ var Menu = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         onBlur: this.onBlurHandler,
         onFocus: this.onFocusHandler,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("dt", {
-          id: "menu_top",
-          onClick: this.onClickHandler,
-          "aria-haspopup": "true",
-          "aria-expanded": this.state.isOpen,
-          children: "Menu"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("dl", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("dl", {
           id: "menubar",
-          children: this.state.isOpen && this.state.menus.map(function (menu) {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("dt", {
+            onClick: this.onClickHandler,
+            "aria-haspopup": "true",
+            "aria-expanded": this.state.isOpen,
+            children: "Menu"
+          }), this.state.isOpen && this.state.menus.map(function (menu) {
             return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("dd", {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
@@ -2073,8 +2072,8 @@ var Menu = /*#__PURE__*/function (_React$Component) {
                 })
               })
             }, menu.id);
-          })
-        })]
+          })]
+        })
       });
     }
   }]);

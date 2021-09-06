@@ -13,15 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+*/
+
+// ログイン画面
+Route::get('auth', 'App\Http\Controllers\MainController@getAuth');
+Route::post('auth', 'App\Http\Controllers\MainController@postAuth');
+
+// 登録画面（非公開）
+Route::get('register12345', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register12345', 'App\Http\Controllers\Auth\RegisterController@register');
 
 // Main画面の表示
 Route::get('pf', 'App\Http\Controllers\MainController@index');
 Route::get('pf/work', 'App\Http\Controllers\WorkController@index');
 Route::get('pf/work/{id}', 'App\Http\Controllers\WorkController@index');
-// MySkilsのルートを追加予定
 
 //Larabel-react間のデータ通信に利用
 Route::get('work/json', 'App\Http\Controllers\WorkController@json');

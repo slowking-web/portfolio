@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Item;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
@@ -37,5 +38,27 @@ class MainController extends Controller
         ];
         
         return view('pf.index', $data);
+    }
+    
+    // ログイン画面
+    public function getAuth()
+    {
+        $param = ['message' => 'ログインしてください。'];
+        return view('pf.auth', $param);
+    }
+    
+    public function postAuth(Request $request)
+    {
+        $name = $request->name;
+        $password = $request->password;
+        
+        if (Auth::attempt(['name' => $name, 'password' => $password])) {
+            return redirect('/pf');
+            //$msg = 'ログインに成功。';
+            //return view('pf/auth', ['message' => $msg]);
+        } else {
+            $msg = 'ログインに失敗しました。';
+            return view('pf/auth', ['message' => $msg]);
+        }
     }
 }
