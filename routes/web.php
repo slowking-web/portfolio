@@ -27,6 +27,9 @@ Route::get('pf/work/{id}', 'App\Http\Controllers\WorkController@index');
 Route::get('work/json', 'App\Http\Controllers\WorkController@json');
 Route::get('work/json/{id}', 'App\Http\Controllers\WorkController@json');
 
+Route::get('menu/json', 'App\Http\Controllers\MenuController@json');
+Route::get('menu/json/{id}', 'App\Http\Controllers\MenuController@json');
+
 // Workの追加
 Route::get('work/add', 'App\Http\Controllers\WorkController@add');
 Route::post('work/add', 'App\Http\Controllers\WorkController@create');
