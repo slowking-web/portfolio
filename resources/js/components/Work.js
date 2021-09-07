@@ -36,8 +36,7 @@ export default class Work extends React.Component {
 			infinite: true,
 			speed: 500,
 			slidesToShow: 1,
-			slidesToScroll: 1,
-			AdaptiveHeight: true
+			slidesToScroll: 1
 		}
 		
 		return (
