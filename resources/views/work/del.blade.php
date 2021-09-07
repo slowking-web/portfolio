@@ -6,7 +6,7 @@
 
 @section('menu')
 	<form class="contact-form" action="del" method="post" enctype="multipart/form-data">
-	<table>
+	<table align="center">
 		@csrf
 		<tr><th></th><th></th><th>Title</th></tr>
 		@foreach ($works as $work)

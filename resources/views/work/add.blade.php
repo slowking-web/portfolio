@@ -6,11 +6,11 @@
 
 @section('menu')
 	<form class="contact-form" action="" method="post" enctype="multipart/form-data">
-	<table>
+	<table align="center">
 		@csrf
-		<tr><th></th><td><input type="text" name="name"></input></td></tr>
-		<tr><th></th><td><input type="file" id="" name="picture" accept="image/png, image/jpeg"></td></tr>
-		<tr><th></th><td><textarea name="job_role"></textarea></td></tr>
+		<input type="file" id="" name="picture" accept="image/png, image/jpeg">
+		<input type="text" name="name" placeholder="JOB DESCRIPTION"></input>
+		<textarea name="job_role" placeholder="DETAIL"></textarea>
 	</table>
 	<input type="submit" value="send">
 	</form>
