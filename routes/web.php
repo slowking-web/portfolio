@@ -52,6 +52,13 @@ Route::post('work/del', 'App\Http\Controllers\WorkController@remove');
 // MySkilsの追加
 Route::get('skill/add', 'App\Http\Controllers\SkillController@add');
 Route::post('skill/add', 'App\Http\Controllers\SkillController@create');
+
+// MySkills一覧表示
+Route::get('skill/list', 'App\Http\Controllers\SkillController@list');
+Route::post('skill/judge', 'App\Http\Controllers\SkillController@judge');
+
 // MySkilsの削除
-Route::get('skill/del', 'App\Http\Controllers\SkillController@delete');
-Route::post('skill/del', 'App\Http\Controllers\SkillController@remove');
+
+// MySkillsの変更
+Route::get('skill/edit', 'App\Http\Controllers\SkillController@edit');
+Route::post('skill/edit', 'App\Http\Controllers\SkillController@update');
