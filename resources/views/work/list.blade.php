@@ -5,7 +5,7 @@
 @endsection
 
 @section('menu')
-	<form class="contact-form" action="del" method="post" enctype="multipart/form-data">
+	<form class="contact-form" action="judge" method="post" enctype="multipart/form-data">
 	<table align="center">
 		@csrf
 		<tr><th></th><th></th><th>Title</th></tr>
@@ -16,7 +16,10 @@
 			</tr>
 		@endforeach
 	</table>
-	<input type="submit" value="delete">
+	<div class="buttonwrap">
+    	<input type="submit" value="update" name="update">
+    	<input type="submit" value="delete" name="delete">
+	</div>
 	</form>
 @endsection
 

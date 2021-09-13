@@ -41,23 +41,27 @@ Route::get('work/json/{id}', 'App\Http\Controllers\WorkController@json');
 Route::get('menu/json', 'App\Http\Controllers\MenuController@json');
 Route::get('menu/json/{id}', 'App\Http\Controllers\MenuController@json');
 
+
 // Workの追加
 Route::get('work/add', 'App\Http\Controllers\WorkController@add');
 Route::post('work/add', 'App\Http\Controllers\WorkController@create');
 
-// Workの削除
-Route::get('work/del', 'App\Http\Controllers\WorkController@delete');
-Route::post('work/del', 'App\Http\Controllers\WorkController@remove');
+// Workの一覧
+Route::get('work/list', 'App\Http\Controllers\WorkController@list');
+Route::post('work/judge', 'App\Http\Controllers\WorkController@judge');
+
+// Workの変更
+Route::get('work/edit', 'App\Http\Controllers\WorkController@edit');
+Route::post('work/edit', 'App\Http\Controllers\WorkController@update');
+
 
 // MySkilsの追加
 Route::get('skill/add', 'App\Http\Controllers\SkillController@add');
 Route::post('skill/add', 'App\Http\Controllers\SkillController@create');
 
-// MySkills一覧表示
+// MySkillsの一覧
 Route::get('skill/list', 'App\Http\Controllers\SkillController@list');
 Route::post('skill/judge', 'App\Http\Controllers\SkillController@judge');
-
-// MySkilsの削除
 
 // MySkillsの変更
 Route::get('skill/edit', 'App\Http\Controllers\SkillController@edit');
