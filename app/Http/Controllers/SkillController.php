@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Skill;
 use App\Models\Item;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\ListRequest;
 
 class SkillController extends Controller
 {
@@ -25,6 +26,9 @@ class SkillController extends Controller
     
     public function create(Request $request)
     {
+        // 入力チェック
+        $this->validate($request, Skill::$rules, Skill::$message);
+        
         // テーブル「skills」に保存
         $skills = new Skill;
         $skills->items_id = $request->items;
@@ -45,11 +49,12 @@ class SkillController extends Controller
         return view('skill.list', ['skills' => $skills]);
     }
     
-    public function judge(Request $request)
+    public function judge(ListRequest $request)
     {
         if ($request->has('update')) {
-            $data = $this->edit($request);
-            return view('skill.edit', $data);
+            return redirect()->route('edit', ['chk' => $request->chk]);
+            //$data = $this->edit($request);
+            //return view('skill.edit', $data);
         } else {
             $this->remove($request);
             return redirect('/pf');
@@ -66,11 +71,14 @@ class SkillController extends Controller
             'skills' => $skills
         ];
         
-        return $data;
+        return view('skill.edit', $data);
     }
     
     public function update(Request $request)
     {
+        // 入力チェック
+        $this->validate($request, Skill::$rules, Skill::$message);
+        
         // テーブル「skills」に保存
         $skills = Skill::find($request->id);
         $form = $request->all();

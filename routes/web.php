@@ -61,8 +61,8 @@ Route::post('skill/add', 'App\Http\Controllers\SkillController@create');
 
 // MySkillsの一覧
 Route::get('skill/list', 'App\Http\Controllers\SkillController@list');
-Route::post('skill/judge', 'App\Http\Controllers\SkillController@judge');
+Route::post('skill/list', 'App\Http\Controllers\SkillController@judge');
 
 // MySkillsの変更
-Route::get('skill/edit', 'App\Http\Controllers\SkillController@edit');
+Route::get('skill/edit', 'App\Http\Controllers\SkillController@edit')->name('edit');
 Route::post('skill/edit', 'App\Http\Controllers\SkillController@update');
