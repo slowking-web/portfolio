@@ -13,7 +13,7 @@ class ListRequest extends FormRequest
      */
     public function authorize()
     {
-        if ($this->path() == 'skill/list') {
+        if ($this->path() == 'skill/list' || $this->path() == 'work/list') {
             return true;
         } else {
             return false;

@@ -15,7 +15,7 @@
 	</div>
 	@endif
 	<form class="contact-form" action="list" method="post" enctype="multipart/form-data">
-	<table  align="center" class="tbskill">
+	<table  align="center" class="tblist">
 		@csrf
 		<tr><th></th><th></th><th>Title</th></tr>
 		@foreach ($skills as $skill)

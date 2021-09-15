@@ -48,10 +48,10 @@ Route::post('work/add', 'App\Http\Controllers\WorkController@create');
 
 // Workの一覧
 Route::get('work/list', 'App\Http\Controllers\WorkController@list');
-Route::post('work/judge', 'App\Http\Controllers\WorkController@judge');
+Route::post('work/list', 'App\Http\Controllers\WorkController@judge');
 
 // Workの変更
-Route::get('work/edit', 'App\Http\Controllers\WorkController@edit');
+Route::get('work/edit', 'App\Http\Controllers\WorkController@edit')->name('wedit');
 Route::post('work/edit', 'App\Http\Controllers\WorkController@update');
 
 

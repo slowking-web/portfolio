@@ -5,14 +5,23 @@
 @endsection
 
 @section('menu')
-	<form class="contact-form" action="judge" method="post" enctype="multipart/form-data">
-	<table align="center">
+	@if (count($errors) > 0)
+	<div>
+		<ul style="list-style: none;">
+			@foreach ($errors->all() as $error)
+				<li>{{$error}}</li>
+			@endforeach
+		</ul>
+	</div>
+	@endif
+	<form class="contact-form" action="list" method="post" enctype="multipart/form-data">
+	<table align="center" class="tblist">
 		@csrf
-		<tr><th></th><th></th><th>Title</th></tr>
+		<tr><th></th><th>Title</th></tr>
 		@foreach ($works as $work)
 			<tr>
 				<td><input type="checkbox" name="chk[]" value="{{$work->id}}"></td>
-				<td>{{$work->name}}</td>
+				<td class="name">{{$work->name}}</td>
 			</tr>
 		@endforeach
 	</table>

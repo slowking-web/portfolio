@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Work;
 use PHPUnit\Framework\Error\Warning;
+use App\Http\Requests\ListRequest;
 
 class WorkController extends Controller
 {
@@ -34,6 +35,9 @@ class WorkController extends Controller
     
     public function create(Request $request)
     {
+        // 入力チェック
+        $this->validate($request, Work::$rules, Work::$message);
+        
         // テーブル「works」に保存
         $work = new Work;
         $work->name = $request->name;
@@ -59,11 +63,12 @@ class WorkController extends Controller
         return view('work.list', ['works' => $work]);
     }
     
-    public function judge(Request $request)
+    public function judge(ListRequest $request)
     {
         if ($request->has('update')) {
-            $data = $this->edit($request);
-            return view('work.edit', $data);
+            return redirect()->route('wedit', ['chk' => $request->chk]);
+            //$data = $this->edit($request);
+            //return view('work.edit', $data);
         } else {
             $this->remove($request);
             return redirect('/pf');
@@ -78,11 +83,14 @@ class WorkController extends Controller
             'works' => $works
         ];
         
-        return $data;
+        return view('work.edit', $data);
     }
     
     public function update(Request $request)
     {
+        // 入力チェック
+        $this->validate($request, Work::$rules, Work::$message);
+        
         // テーブル「workss」に保存
         $work = Work::find($request->id);
         $work->name = $request->name;

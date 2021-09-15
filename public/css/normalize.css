@@ -426,8 +426,8 @@ th {
   padding: 0;
 }
 
-.tbskill td,
-.tbskill th {
+.tblist td,
+.tblist th {
   padding: 0;
   
   margin: 40px auto 0;
@@ -445,4 +445,9 @@ th {
 
 .sname {
   width: 400px;
+}
+
+.name {
+  width: 200px;
+  text-align:center;
 }
