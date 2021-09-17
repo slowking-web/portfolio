@@ -11,7 +11,7 @@
     	@csrf
         <tr><th></th><td><input type="text" name="name" placeholder="NAME"></td></tr>
         <tr><th></th><td><input type="password" name="password" placeholder="PASSWORD"></td></tr>
-        <tr><th></th><td><input type="submit" value="send"></td></tr>
+        <tr><th></th><td><input type="submit" value="login"></td></tr>
     </table>
 </form>
 @endsection

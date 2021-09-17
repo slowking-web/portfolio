@@ -2,6 +2,8 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
 <div class="header">
@@ -13,5 +15,6 @@
 <div class="footer">
 	@yield('footer')
 </div>
+<script src="{{asset('/js/app.js')}}"></script>
 </body>
 </html>
