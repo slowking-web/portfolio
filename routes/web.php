@@ -27,9 +27,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('auth', 'App\Http\Controllers\MainController@getAuth');
 Route::post('auth', 'App\Http\Controllers\MainController@postAuth');
 
+// ログイン処理
+Route::post('logout', 'App\Http\Controllers\MenuController@getLogout');
+
 // 登録画面（非公開）
-Route::get('register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('register', 'App\Http\Controllers\Auth\RegisterController@register');
+//Route::get('register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
+//Route::post('register', 'App\Http\Controllers\Auth\RegisterController@register');
 
 // Main画面の表示
 Route::get('pf', 'App\Http\Controllers\MainController@index')->middleware('auth');
