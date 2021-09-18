@@ -17,7 +17,7 @@
 	<form class="contact-form" action="list" method="post" enctype="multipart/form-data">
 	<table  align="center" class="tblist">
 		@csrf
-		<tr><th></th><th></th><th>Title</th></tr>
+		<tr><th></th><th>Division</th><th>Title</th></tr>
 		@foreach ($skills as $skill)
 			<tr>
 				<td class="btn"><input type="checkbox" name="chk[]" value="{{$skill->id}}"></td>
