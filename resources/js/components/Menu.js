@@ -17,7 +17,7 @@ export default class Menu extends React.Component {
 		this.onFocusHandler = this.onFocusHandler.bind(this);
 		
 		// DBから「menu」テーブルを取得する
-		axios.get('menu/json').then(response=>{
+		axios.get('/menu/json').then(response=>{
 			let get_menu = response.data;
 			this.setState({menus:get_menu});
 		});

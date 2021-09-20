@@ -2015,7 +2015,7 @@ var Menu = /*#__PURE__*/function (_React$Component) {
     _this.onBlurHandler = _this.onBlurHandler.bind(_assertThisInitialized(_this));
     _this.onFocusHandler = _this.onFocusHandler.bind(_assertThisInitialized(_this)); // DBから「menu」テーブルを取得する
 
-    axios.get('menu/json').then(function (response) {
+    axios.get('/menu/json').then(function (response) {
       var get_menu = response.data;
 
       _this.setState({
