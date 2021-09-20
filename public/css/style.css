@@ -276,6 +276,10 @@ tbody {
   background-color: #000;
 }
 
+.worktb td {
+	color: #fff;
+}
+
 .contact-logout {
   margin-left: auto;
 }
