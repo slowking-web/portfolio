@@ -45,6 +45,7 @@ class SkillController extends Controller
         ->leftJoin('items', 'skills.items_id', '=', 'items.sort_id')
         ->where('items.sub_id', '=', 1)
         ->select('skills.id', 'items.name as iname', 'skills.name as sname')
+        ->orderBy('skills.items_id')
         ->get();
         return view('skill.list', ['skills' => $skills]);
     }
