@@ -181,33 +181,28 @@ img {
   background-color: #fff;
   color: #333;
 }
-.skills-wrapper {
-  display: table;
-  width: 80%;
-  margin: 50px auto 0;
-  table-layout: fixed;
-}
 .skill-title {
   margin: 0 20px 20px;
   font-size: 2rem;
 }
-.skill-text {
-  margin: 0 20px;
-  line-height: 2;
-}
+
 thead,
 tfoot {
     background-color: #333;
     color: #fff;
-}
-tbody {
-	color: #333;
 }
 
 .buttonwrap {
 	display:inline-flex;
 }
 
+.skill-text {
+  color: #333;
+  margin-bottom: auto;
+  padding: 15px;
+  outline: none;
+  border: 1px solid #333;
+}
 
 /* --------------------------------
  * contact
@@ -369,23 +364,7 @@ tbody {
     transform: none;
   }
 
-  /* --- skills --- */
-  .skills-wrapper,
-  .skill-box {
-    display: block;
-  }
-  .skill-box {
-    margin: 40px auto;
-  }
-  .skill-icon {
-    width: 100px;
-    height: 100px;
-    font-size: 5rem;
-    line-height: 92px;
-  }
-  .skill-text {
-    margin: 0;
-  }
+
 
   /* --- contact --- */
   .contact {

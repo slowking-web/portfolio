@@ -18,16 +18,16 @@
     		<thead>
 			<tr><th colspan="2" class="skill-title">{{$item->name}}</th></tr>
 			</thead>
+			<tbody>
     			@foreach ($skills as $skill)
     			@if ($item->sort_id == $skill->items_id)
-    			<tbody>
         		<tr>
-        			<td><p class="skill-text">{{$skill->name}}</p></td>
-        			<td><p class="skill-text">{{$skill->skill}}</p></td>
+        			<td class="skill-text">{!! nl2br(e($skill->name)) !!}</td>
+        			<td class="skill-text">{!! nl2br(e($skill->skill)) !!}</td>
         		</tr>
-        		</tbody>
         		@endif
         		@endforeach
+        	</tbody>
     		@endforeach
     	</table>
     	</div>
