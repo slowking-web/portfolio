@@ -53,7 +53,7 @@ class MainController extends Controller
         $password = $request->password;
         
         if (Auth::attempt(['name' => $name, 'password' => $password])) {
-            return redirect('/pf');
+            return redirect('pf');
             //$msg = 'ログインに成功。';
             //return view('pf/auth', ['message' => $msg]);
         } else {

@@ -28,14 +28,14 @@ Route::get('auth', 'App\Http\Controllers\MainController@getAuth');
 Route::post('auth', 'App\Http\Controllers\MainController@postAuth');
 
 // ログイン処理
-Route::post('logout', 'App\Http\Controllers\MenuController@getLogout');
+Route::post('logout', 'App\Http\Controllers\MenuController@getLogout')->name('logout');
 
 // 登録画面（非公開）
 //Route::get('register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
 //Route::post('register', 'App\Http\Controllers\Auth\RegisterController@register');
 
 // Main画面の表示
-Route::get('pf', 'App\Http\Controllers\MainController@index')->middleware('auth');
+Route::get('pf', 'App\Http\Controllers\MainController@index')->name('pf')->middleware('auth');
 Route::get('pf/work', 'App\Http\Controllers\WorkController@index')->middleware('auth');
 Route::get('pf/work/{id}', 'App\Http\Controllers\WorkController@index')->middleware('auth');
 
