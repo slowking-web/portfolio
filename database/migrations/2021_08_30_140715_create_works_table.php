@@ -32,5 +32,6 @@ class CreateWorksTable extends Migration
     public function down()
     {
         Schema::dropIfExists('works');
+
     }
 }
